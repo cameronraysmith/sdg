@@ -1,0 +1,12 @@
+\begin{tikzpicture}[circuit]
+%\pgfsetbaselinepointlater{\pgfpointanchor{current bounding box}{north}}
+%	\begin{pgfonlayer}{nodelayer}
+		\node [style=ipoint] (0) at (-2.75, 2) {};
+		\node [style=ipoint] (1) at (-2.75, 1) {};
+%	\end{pgfonlayer}
+%	\begin{pgfonlayer}{edgelayer}
+		\draw[looseness=1.50, dline, bend left] (1) to (0);
+		\draw[looseness=1.50, dline, bend left] (0) to (1);
+%	\end{pgfonlayer}
+%{\pgfsetbaseline{(current bounding box.center)}}
+\end{tikzpicture}

@@ -1,0 +1,26 @@
+\begin{tikzpicture}[dline, mcgraph]
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=valg, minimum width=7 mm] (0) at (-1, 0.75) {f};
+		\node [style=valg, minimum width=7 mm] (1) at (1, 0.75) {g};
+		\node [style=valg] (2) at (-2, -0.75) {A};
+		\node [style=valg] (3) at (-1, -0.75) {B};
+		\node [style=valg] (4) at (0, -0.75) {C};
+		\node [style=valg] (5) at (1, -0.75) {D};
+		\node [style=valg] (6) at (2, -0.75) {E};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw[out=225, in=315, loop] (6) to ();
+		\draw (6) to (1);
+		\draw[out=225, in=315, loop] (4) to ();
+		\draw (0) to (5);
+		\draw[out=225, in=315, loop] (5) to ();
+		\draw[looseness=0.75, bend right] (6) to (1);
+		\draw (3) to (0);
+		\draw (0) to (6);
+		\draw[out=225, in=315, loop] (2) to ();
+		\draw (2) to (0);
+		\draw (1) to (3);
+		\draw (4) to (0);
+		\draw[out=225, in=315, loop] (3) to ();
+	\end{pgfonlayer}
+\end{tikzpicture}

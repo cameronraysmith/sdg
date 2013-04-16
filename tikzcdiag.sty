@@ -1,0 +1,99 @@
+% ===================================================
+% = TikZ macros and styles for commutative diagrams =
+% ===================================================
+
+\usetikzlibrary{matrix,arrows}
+\tikzstyle{cdiag}=[matrix of math nodes, row sep=3em, column sep=3em, text height=1.5ex, text depth=0.25ex,inner sep=0.5em]
+\tikzstyle{arrs}=[-latex,font=\small,auto]
+\tikzstyle{every picture}=[baseline]
+
+\newcommand{\csquare}[8]{
+\begin{tikzpicture}
+    \matrix(m)[cdiag,ampersand replacement=\&]{
+    #1 \& #2 \\
+    #3 \& #4  \\};
+    \path [arrs] (m-1-1) edge node {$#5$} (m-1-2)
+                 (m-2-1) edge node {$#6$} (m-2-2)
+                 (m-1-1) edge node [swap] {$#7$} (m-2-1)
+                 (m-1-2) edge node {$#8$} (m-2-2);
+\end{tikzpicture}
+}
+
+\newcommand{\cpair}[4]{
+\begin{tikzpicture}
+    \matrix(m)[cdiag,ampersand replacement=\&]{
+    #1 \& #2 \\};
+    \path [arrs] (m-1-1.20) edge node {$#3$} (m-1-2.160)
+                 (m-1-1.-20) edge node [swap] {$#4$} (m-1-2.-160);
+\end{tikzpicture}
+}
+
+% commands for putting pushout/pullback brackets on commutative diags
+\newcommand{\NWbracket}[1]{%
+\draw #1 +(-0.25,0.5) -- +(-0.5,0.5) -- +(-0.5,0.25);}
+\newcommand{\NEbracket}[1]{%
+\draw #1 +(0.25,0.5) -- +(0.5,0.5) -- +(0.5,0.25);}
+\newcommand{\SWbracket}[1]{%
+\draw #1 +(-0.25,-0.5) -- +(-0.5,-0.5) -- +(-0.5,-0.25);}
+\newcommand{\SEbracket}[1]{%
+\draw #1 +(0.25,-0.5) -- +(0.5,-0.5) -- +(0.5,-0.25);}
+\newcommand{\Nbracket}[1]{%
+\draw #1 +(-0.21,0.41) -- +(0,0.62) -- +(0.21,0.41);}
+
+\newcommand{\posquare}[8]{
+\begin{tikzpicture}
+    \matrix(m)[cdiag,ampersand replacement=\&]{
+    #1 \& #2 \\
+    #3 \& #4  \\};
+    \path [arrs] (m-1-1) edge node {$#5$} (m-1-2)
+                 (m-2-1) edge node [swap] {$#6$} (m-2-2)
+                 (m-1-1) edge node [swap] {$#7$} (m-2-1)
+                 (m-1-2) edge node {$#8$} (m-2-2);
+	\NWbracket{(m-2-2)}
+\end{tikzpicture}
+}
+
+\newcommand{\monoposquare}[8]{
+\begin{tikzpicture}
+    \matrix(m)[cdiag,ampersand replacement=\&]{
+    #1 \& #2 \\
+    #3 \& #4  \\};
+    \path [arrs] (m-1-1) edge [right hook-latex] node {$#5$} (m-1-2)
+                 (m-2-1) edge [right hook-latex] node [swap] {$#6$} (m-2-2)
+                 (m-1-1) edge [right hook-latex] node [swap] {$#7$} (m-2-1)
+                 (m-1-2) edge [right hook-latex] node {$#8$} (m-2-2);
+	\NWbracket{(m-2-2)}
+\end{tikzpicture}
+}
+
+\newcommand{\ctri}[6]{
+\begin{center}
+	\begin{tikzpicture}[-latex]
+		\matrix (m) [cdiag,ampersand replacement=\&] { #1 \& #2 \\ #3 \& \\ };
+		\path [arrs] (m-1-1) edge node {$#4$} (m-1-2)
+		      (m-1-1) edge node [swap] {$#5$} (m-2-1)
+		      (m-2-1) edge node [swap] {$#6$} (m-1-2);
+	\end{tikzpicture}
+\end{center}
+}
+
+\newcommand{\csquareslant}[9]{
+\begin{tikzpicture}[-latex]
+    \matrix(m)[cdiag,ampersand replacement=\&]{
+    #1 \& #2 \\
+    #3 \& #4  \\};
+    \path [arrs] (m-1-1) edge node {$#5$} (m-1-2)
+                 (m-2-1) edge node [swap] {$#6$} (m-2-2)
+                 (m-1-1) edge node [swap] {$#7$} (m-2-1)
+                 (m-1-2) edge node {$#8$} (m-2-2)
+				 (m-1-2) edge node [swap] {$#9$} (m-2-1);
+\end{tikzpicture}
+}
+
+\newcommand{\leftmonocospan}[5]{
+\begin{tikzpicture}
+	\matrix (m) [cdiag,ampersand replacement=\&] { #1 \& #3 \& #5 \\ };
+	\path [arrs] (m-1-1) edge [right hook-latex] node {$#2$} (m-1-2)
+	             (m-1-3) edge node [swap] {$#4$} (m-1-2);
+\end{tikzpicture}
+}

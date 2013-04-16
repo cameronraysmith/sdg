@@ -1,0 +1,148 @@
+%%-----------------------------------------------------------------
+%% PENDING / WORK IN PROGRESS
+%\newcommand{\TODOitem}{%
+%\typeout{WARNING!!! there is still a TODO left}
+%\color{blue}\item
+%}
+%\newcommand{\TODO}[1]{%
+%\typeout{WARNING!!! there is still a TODO left}
+%\marginpar{\textbf{!TODO: }\emph{#1}}
+%}
+%
+%\renewcommand{\TODO}[1]{}
+%\nochangebars
+
+%%-----------------------------------------------------------------
+%% CATEGORIES
+%\newcommand{\catSet}{\ensuremath{\textbf{Set}\xspace}}
+%\newcommand{\catVect}{\ensuremath{\textbf{Vect}\xspace}}
+%\newcommand{\catTop}{\ensuremath{\textbf{Top}\xspace}}
+%\newcommand{\catPreGraphic}{\ensuremath{\textbf{PreGraphic}}\xspace}
+%\newcommand{\catGraphic}{\ensuremath{\textbf{OGraphic}}\xspace}
+%\newcommand{\catPreOGraph}{\ensuremath{\textbf{PreOGraph}}\xspace}
+%\newcommand{\catOGraph}{\ensuremath{\textbf{OGraph}}\xspace}
+%\newcommand{\catGraph}{\ensuremath{\textbf{Graph}}\xspace}
+%\newcommand{\catModG}{\ensuremath{\mathsf{Mod}(\mathcal{G})}\xspace}
+%\newcommand{\catGThy}{\ensuremath{\textbf{GThy}}\xspace}
+%\newcommand{\slicecat}[2]{#1 / #2}
+%\newcommand{\catGraphSlice}{\ensuremath{\slicecat{\catGraph}{2_\mathcal{G}}}}
+%\newcommand{\catTGSlice}{\ensuremath{\slicecat{\catGraph}{T_\mathcal{G}}}}
+%\newcommand{\catOGraphTG}{\ensuremath{\catOGraph_{\typegraph}}}
+%\newcommand{\catMonPreCat}{\ensuremath{\textbf{MonPreCat}}\xspace}
+%\newcommand{\rewriteCat}[1]{\ensuremath{\DCsp(\catOGraphTG)/\!\!/\,#1}}
+
+%%-----------------------------------------------------------------
+%% SPECIAL MATH
+%\newcommand{\typegraph}{\ensuremath{T_{\mathcal G}}}
+%\newcommand{\iso}{\cong}
+%\newcommand{\denote}[1]{\llbracket #1 \rrbracket}
+%%\newcommand{\Int}[1]{\mathop{\text{Int}}(#1)}
+%%\newcommand{\Bry}[1]{\mathop{\text{Bry}}(#1)}
+%\newcommand{\Bry}[1]{B_{#1}}
+%\newcommand{\Int}[1]{\mathop{\text{Int}}_{#1}}
+%% \sizeof{x} == |x|
+%\newcommand{\sizeof}[1]{\left|#1\right|}
+%\renewcommand{\split}[2]{#1_{{}\ltimes #2}}
+%\newcommand{\plus}{+}
+%\newcommand{\mergew}[1]{+_{#1}}
+%\newcommand{\plugw}[1]{+_{\!#1}^{\!\!*}}
+%\newcommand{\plug}{+^{\!\!*}}
+%\newlength{\hookrightarrowwidth}
+%\settowidth{\hookrightarrowwidth}{$\hookrightarrow$}%
+%\DeclareMathOperator{\expandsto}{\stackrel{\prec}{\hookrightarrow}}
+%
+%\DeclareMathOperator{\matches}{%
+%\makebox[\hookrightarrowwidth][c]{$\hookrightarrow$}
+%\hspace*{-\hookrightarrowwidth}%
+%\makebox[\hookrightarrowwidth][c]{\raise0.5mm\hbox{$\, ^{\sim}$}}%
+%}
+%
+%\DeclareMathOperator{\leftmatches}{%
+%\makebox[\hookrightarrowwidth][c]{$\hookleftarrow$}
+%\hspace*{-\hookrightarrowwidth}%
+%\makebox[\hookrightarrowwidth][c]{\raise0.5mm\hbox{$\, ^{\sim}$}}%
+%}
+%
+%\DeclareMathOperator{\notleftmatches}{%
+%\makebox[\hookrightarrowwidth][c]{$\hookleftarrow$}
+%\hspace*{-\hookrightarrowwidth}%
+%\makebox[\hookrightarrowwidth][c]{\raise0.5mm\hbox{$\, ^{\sim}$}}%
+%\hspace*{-\hookrightarrowwidth}%
+%\makebox[\hookrightarrowwidth][c]{\raise-0.2mm\hbox{\footnotesize{$/$}}}%
+%}
+%
+%\newcommand{\seqcompww}[3]{#1\, ;_{#2} #3}
+%\newcommand{\seqcompss}[2]{#1\, ;_{\mathit{p}} #2}
+%\newcommand{\exten}[2]{{#1}^{\uparrow #2}}
+%\newcommand{\tensor}{\otimes}
+%\newcommand{\injmap}{\hookrightarrow}
+%\newcommand{\linjmap}{\hookleftarrow}
+%
+%\newcommand{\In}{\textrm{In}}
+%\newcommand{\Out}{\textrm{Out}}
+%%\newcommand{\Bound}{\textrm{Bound}}
+%%\newcommand{\Ext}{\textrm{FIXME!!!}}
+%%\newcommand{\Intern}{\textrm{Intern}}
+%%\newcommand{\Isol}{\textrm{Isol}}
+%\newcommand{\DCsp}{\textbf{DCsp}}
+%%\newcommand{\Interf}{\textrm{Interf}}
+%\newcommand{\Homeo}[1]{\denote{#1}_\sim}
+%\newcommand{\HomeoFun}{\denote{-}_\sim}
+
+
+%%-----------------------------------------------------------------
+%% Rewriting
+%\newcommand{\cmdrewritesto}{\tikz[baseline=-0.25em] { \draw [-open triangle 45, line width=0.2pt] (0,0) -- (0.5,0); }\,}
+%\newcommand{\cmdrewriteequiv}{\tikz[baseline=-0.25em] { \draw [open triangle 45-open triangle 45, line width=0.2pt] (0,0) -- node [auto,yshift=-1.2mm] {$*$} (0.7,0); }\,}
+%\newcommand{\cmdrewritetrans}{\tikz[baseline=-0.25em] { \draw [-open triangle 45, line width=0.2pt] (0,0) -- node [auto,pos=0.3,yshift=-1.2mm] {$*$} (0.5,0); }\,}
+%
+%\newcommand{\lengthymultimapdot}[1]{%
+%\begin{tikzpicture}[baseline=(current bounding box.south), node distance=0.5em and 1em,text height=0em, text depth=0ex,inner sep=0em]
+%  \node[fill=white, line width=0.2pt, draw=black, inner sep=1.5pt, circle] (b) {};
+%  \path[-] ($(b) - (#1,0)$) edge (b);
+%\end{tikzpicture}%
+%}
+%%\newcommand{\longmultimapdot}{\,\lengthymultimapdot{1.7em}\xspace}
+%%\newcommand{\multimapdot}{\,\lengthymultimapdot{1em}\xspace}
+%
+%\DeclareMathOperator{\multimapdot}{\lengthymultimapdot{1em}}
+%\DeclareMathOperator{\longmultimapdot}{\lengthymultimapdot{1.7em}}
+%
+%\DeclareMathOperator{\rewritesto}{\cmdrewritesto}
+%\DeclareMathOperator{\rewriteequiv}{\cmdrewriteequiv}
+%\DeclareMathOperator{\rewritetrans}{\cmdrewritetrans}
+%
+%
+%%\newcommand{\multimapdot}{-\!\!\!\bullet}
+%%\newcommand{\longmultimapdot}{\multimapdot\multimapdot}
+%%% rewrite arrows
+%\newcommand{\rwarrow}{\multimapdot}
+%\newcommand{\longrwarrow}{\longmultimapdot}
+%%% rewrite rule with boundary data
+%\newcommand{\rwrulew}[3]{#1 \multimapdot_{#2} #3}
+%%% Rewrite rule without boundary data
+%\newcommand{\rwrule}[2]{#1 \multimapdot #2}
+%%% substitution with boundary data
+%\newcommand{\rwsubstw}[3]{#1 \multimapdot_{#2} #3}
+%%% substitution without boundary data
+%\newcommand{\rwsubst}[2]{#1 \multimapdot #2}
+%%% ???
+%%\newcommand{\xrwsubst}[2]{#1 \multimapdot #2}
+
+%%-----------------------------------------------------------------
+%% THEOREM ENV
+%\theoremstyle{plain} % default 
+%\newtheorem{theorem}{Theorem}[section]
+%\newtheorem{proposition}[theorem]{Proposition}
+%\newtheorem{lemma}[theorem]{Lemma}
+%\newtheorem{corollary}[theorem]{Corollary}
+%\newtheorem{conjecture}[theorem]{Conjecture}
+%
+%%\theoremstyle{definition}
+%\newtheorem{definition}[theorem]{Definition}
+%\newtheorem{definitions}[theorem]{Definitions}
+%
+%%\theoremstyle{remark}
+%\newtheorem{example}[theorem]{Example}
+%\newtheorem{examples}[theorem]{Examples}
+%\newtheorem{remark}[theorem]{Remark}

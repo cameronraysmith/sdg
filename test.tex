@@ -1,0 +1,145 @@
+\documentclass{article}
+\usepackage[paper=a4paper, top=2.3cm, bottom=2.3cm, left=2.2cm, right=2.2cm]{geometry}
+\usepackage{url}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+%\usepackage{mnsymbol}
+\usepackage{latexsym}
+\usepackage{stmaryrd}
+\usepackage{graphicx}
+\usepackage{multirow, longtable}
+\usepackage{graphicx}
+\usepackage{xspace}
+\usepackage{verbatim}
+\usepackage{ifthen}
+\usepackage{changebar}
+\usepackage{hyperref}
+
+\usepackage{tikz}
+\usepackage{tikzfig}    % include and pre-build tikz figures
+\usepackage{tikzcdiag}  % macros for tikz commutative diagrams
+
+\input{tikzstyles.tex}  % custom tikz styles
+
+\input{comments.tex}
+
+\newcommand{\institute}[1]{\\#1}
+\newcommand{\email}[1]{\\\tt{#1}}
+
+%%-----------------------------------------------------------------
+%% FRONT MATTER
+\title{Examples of string diagrams}
+
+ \author{First Last
+ \institute{University of One}
+ \email{a@b.com}
+ \and
+ First Last
+ \institute{University of Two}
+ \email{c@d.com} }
+
+
+\date{Draft: \today \thanks{ This research was funded by ...}}
+
+%{\small{\paragraph{Acknowledgements}  }}
+
+%%-----------------------------------------------------------------
+%% DOCUMENT
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+String diagrams
+\end{abstract}
+
+\section{Introduction}
+
+\begin{center}
+\begin{tikzpicture}[circuit]
+\node (g1) [andg] {$\land$};
+\node (x2) [notg, above left=of g1] {$\lnot$};
+\node (x1) [notg, below left=of g1] {$\lnot$};
+\node (i1) [left=of x1, halfe] {};
+\node (i2) [left=of x2, halfe] {};
+\node (n3) [notg, right=of g1] {$\lnot$};
+\node (o1) [halfe, right=of n3] {};
+\path[dline] 
+  (i1) edge (x1)
+  (i2) edge (x2)
+  (x1) edge (g1)
+  (x2) edge (g1)
+  (g1) edge (n3);
+\path[dline] 
+  (n3) edge (o1)
+;
+\end{tikzpicture}
+\end{center}
+
+\begin{center}
+\input{figures/box_diagram.tikz}
+\end{center}
+
+\begin{center}
+\input{figures/circle.tikz}
+\end{center}
+
+\begin{center}
+\input{figures/example_circuit.tikz}
+\end{center}
+
+\begin{center}
+\input{figures/example_circuit_no_binding.tikz}
+\end{center}
+
+\begin{center}
+\input{figures/example_circuit_with_copy.tikz}
+\end{center}
+
+\begin{center}
+\input{figures/homeo0rhs.tikz}
+\end{center}
+
+\begin{center}
+\input{figures/homeo3rhs.tikz}
+\end{center}
+
+\begin{center}
+\input{figures/homeo0.tikz}
+\end{center}
+
+\begin{center}
+\input{figures/homeo3.tikz}
+\end{center}
+
+\begin{center}
+\input{figures/homeo1rhs.tikz}
+\end{center}
+
+\begin{center}
+\input{figures/rewrite.tikz}
+\end{center}
+
+\begin{center}
+\input{figures/homeo1.tikz}
+\end{center}
+
+\begin{center}
+\input{figures/typegraph.tikz}
+\end{center}
+
+\begin{center}
+\input{figures/homeo2rhs.tikz}
+\end{center}
+
+\begin{center}
+\input{figures/generators.tikz}
+\end{center}
+
+\begin{center}
+\input{figures/homeo2.tikz}
+\end{center}
+               
+\end{document}

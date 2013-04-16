@@ -1,0 +1,10 @@
+\begin{tikzpicture}[circuit]
+%	\begin{pgfonlayer}{nodelayer}
+		\node [style=ipoint] (0) at (0, 0.25) {};
+		\node [style=none] (1) at (0, -0.25) {};
+%	\end{pgfonlayer}
+%	\begin{pgfonlayer}{edgelayer}
+		\draw[in=180, out=180, looseness=2.00, dline] (1.center) to (0);
+		\draw[in=0, out=0, looseness=2.00, shorten <=0 pt, shorten >=-0.1 pt, line] (0) to (1.center);
+%	\end{pgfonlayer}
+\end{tikzpicture}

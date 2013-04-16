@@ -1,0 +1,22 @@
+\usepackage{tikz}
+\usepackage{ifthen}
+\ifthenelse{\isundefined{\realjobname}}{}{\pgfrealjobname{\realjobname}}
+
+\usetikzlibrary{shapes}
+\usetikzlibrary[shapes.geometric]
+
+\newcommand{\tikzfig}[1]{%
+\beginpgfgraphicnamed{#1}
+\InputIfFileExists{#1.tikz}{}{\input{./figures/#1.tikz}}
+\endpgfgraphicnamed}
+
+\newcommand{\inlinetikzfig}[1]{\InputIfFileExists{#1.tikz}{}{\input{./figures/#1.tikz}}}
+
+% these are automatically assumed by the output of tikzit
+\pgfdeclarelayer{edgelayer}
+\pgfdeclarelayer{nodelayer}
+\pgfsetlayers{edgelayer,nodelayer,main}
+\tikzstyle{none}=[inner sep=0mm]
+\tikzstyle{every loop}=[]
+\tikzstyle{every picture}=[baseline=-0.25em,shorten <=-0.1mm,shorten >=-0.1mm]
+

@@ -1,0 +1,20 @@
+\begin{tikzpicture}[circuit]
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (-1.25, 1) {};
+		\node [style=copyg] (1) at (-0.5, 1) {};
+		\node [style=andg] (2) at (1.5, 1) {$\land$};
+		\node [style=none] (3) at (2.5, 1) {};
+		\node [style=andg] (4) at (0.75, 0.5) {$\land$};
+		\node [style=none] (5) at (-1.25, 0) {};
+		\node [style=notg] (6) at (0, 0) {$\lnot$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw[dline] (2) to (3.center);
+		\draw[dline] (4) to (2);
+		\draw[dline] (6) to (4);
+		\draw[out=30, looseness=0.75, in=150, dline] (1) to (2);
+		\draw[dline] (5.center) to (6);
+		\draw[bend right=15, looseness=0.75, dline] (1) to (4);
+		\draw[dline] (0.center) to (1);
+	\end{pgfonlayer}
+\end{tikzpicture}

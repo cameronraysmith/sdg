@@ -1,0 +1,29 @@
+\begin{tikzpicture}
+	\path [use as bounding box] (-2.5,-1.25) rectangle (3,1.25);
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (-1.5, 0.75) {};
+		\node [style=none] (1) at (1.75, 0.75) {};
+		\node [style=square box, scale=0.8] (2) at (0.75, 0.5) {$\xi$};
+		\node [style=square box] (3) at (-1.5, 0) {$\alpha$};
+		\node [style=none] (4) at (-0.75, 0) {};
+		\node [style=none] (5) at (0, 0) {$\Rightarrow$};
+		\node [style=square box] (6) at (1.75, 0) {$\chi$};
+		\node [style=none] (7) at (2.5, 0) {};
+		\node [style=none] (8) at (-2.25, -0.75) {};
+		\node [style=none] (9) at (-0.75, -0.75) {};
+		\node [style=none] (10) at (1, -0.75) {};
+		\node [style=none] (11) at (2.5, -0.75) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw[style=diredge] (4.center) to (3);
+		\draw[style=diredge, bend right] (2) to (6);
+		\draw[style=diredge] (7.center) to (6);
+		\draw[out=-60, style=diredge, in=150] (6) to (11.center);
+		\draw[style=diredge] (0.center) to (3);
+		\draw[out=-60, style=diredge, in=150] (3) to (9.center);
+		\draw[style=diredge, bend right] (6) to (2);
+		\draw[out=210, style=diredge, in=60] (3) to (8.center);
+		\draw[out=210, style=diredge, in=60] (6) to (10.center);
+		\draw[style=diredge] (1.center) to (6);
+	\end{pgfonlayer}
+\end{tikzpicture}

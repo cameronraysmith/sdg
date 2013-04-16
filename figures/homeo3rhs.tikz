@@ -1,0 +1,9 @@
+\begin{tikzpicture}[circuit]
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=ipoint] (0) at (-2, 1.5) {};
+		\node [style=ipoint] (1) at (-2, 0.75) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw[dline] (0) to (1);
+	\end{pgfonlayer}
+\end{tikzpicture}

@@ -1,0 +1,36 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=elabel, font=\small \sf] (0) at (-1.25, 1) {A};
+		\node [style=elabel, font=\small \sf] (1) at (-0.75, 1) {B};
+		\node [style=elabel, font=\small \sf] (2) at (-0.25, 1) {C};
+		\node [style=elabel, font=\small \sf] (3) at (0.5, 1) {E};
+		\node [style=elabel, font=\small \sf] (4) at (1, 1) {E};
+		\node [style=none] (5) at (-1, 0.25) {};
+		\node [style=none] (6) at (-0.75, 0.25) {};
+		\node [style=none] (7) at (-0.5, 0.25) {};
+		\node [style=none] (8) at (0.5, 0.25) {};
+		\node [style=none] (9) at (1, 0.25) {};
+		\node [style=none] (10) at (-2.5, 0) {$T := $};
+		\node [style=none] (11) at (-1.75, 0) {$\left\{\vphantom{\left.\right\}\int^{\int^{\int^{\int}}}}\right.$};
+		\node [style=square box, minimum width=8 mm] (12) at (-0.75, 0) {f};
+		\node [style=square box, minimum width=8 mm] (13) at (0.75, 0) {g};
+		\node [style=none] (14) at (1.75, 0) {$\left.\vphantom{\left\{\right.\int^{\int^{\int^{\int}}}}\right\}$};
+		\node [style=none] (15) at (-1, -0.25) {};
+		\node [style=none] (16) at (-0.5, -0.25) {};
+		\node [style=none, anchor=west] (17) at (-0.25, -0.25) {,};
+		\node [style=none] (18) at (0.75, -0.25) {};
+		\node [style=elabel, font=\small \sf] (19) at (-1, -1) {D};
+		\node [style=elabel, font=\small \sf] (20) at (-0.5, -1) {E};
+		\node [style=elabel, font=\small \sf] (21) at (0.75, -1) {B};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw[bend left=15, diredge] (2) to (7.center);
+		\draw[diredge] (18.center) to (21);
+		\draw[bend right=15, diredge] (0) to (5.center);
+		\draw[diredge] (15.center) to (19);
+		\draw[diredge] (4) to (9.center);
+		\draw[diredge] (16.center) to (20);
+		\draw[diredge] (3) to (8.center);
+		\draw[diredge] (1) to (6.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

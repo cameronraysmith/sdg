@@ -1,0 +1,23 @@
+\begin{tikzpicture}[circuit]
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=brace] (0) at (-2, 2.25) {$\overbrace{\quad}^n$};
+		\node [style=ipoint] (1) at (-2.5, 1.75) {};
+		\node [style=ipoint] (2) at (-1.5, 1.75) {};
+		\node [style=ellipses] (3) at (-2, 1.5) {$\hdots$};
+		\node [style=ipoint] (4) at (-3.5, 1) {};
+		\node [style=ipoint] (5) at (-2.75, 1) {};
+		\node [style=valg] (6) at (-2, 1) {$\ $};
+		\node [style=ellipses] (7) at (-2, 0.5) {$\hdots$};
+		\node [style=ipoint] (8) at (-2.5, 0.25) {};
+		\node [style=ipoint] (9) at (-1.5, 0.25) {};
+		\node [style=brace] (10) at (-2, -0.25) {$\underbrace{\quad}_m$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw[dline] (2) to (6);
+		\draw[dline] (5) to (6);
+		\draw[dline] (6) to (8);
+		\draw[dline] (1) to (6);
+		\draw[dline] (4) to (5);
+		\draw[dline] (6) to (9);
+	\end{pgfonlayer}
+\end{tikzpicture}

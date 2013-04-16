@@ -1,0 +1,29 @@
+\begin{tikzpicture}
+	\path [use as bounding box] (-2.75,-2) rectangle (3,2.25);
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (-1.5, 2) {};
+		\node [style=square box] (1) at (-1.5, 1) {$\alpha$};
+		\node [style=square box] (2) at (0.5, 1) {$\beta$};
+		\node [style=none] (3) at (2.25, 0.25) {};
+		\node [style=square box] (4) at (-2.25, -0.5) {$\gamma$};
+		\node [style=square box] (5) at (0.5, -0.5) {$\phi$};
+		\node [style=none] (6) at (2.25, -0.5) {};
+		\node [style=square box] (7) at (-1.25, -1.25) {$\rho$};
+		\node [style=none] (8) at (0, -1.75) {};
+		\node [style=none] (9) at (1, -1.75) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw[bend left=15, style=diredge] (5) to (9.center);
+		\draw[out=-60, style=diredge, in=180] (1) to (5);
+		\draw[style=diredge, out=90, in=0] (7) to (4);
+		\draw[style=diredge, in=180, out=180, looseness=1.75] (3.center) to (6.center);
+		\draw[style=diredge] (0.center) to (1);
+		\draw[style=diredge, bend right=15] (5) to (8.center);
+		\draw[out=225, style=diredge, in=90] (1) to (4);
+		\draw[out=0, looseness=1.75, in=0] (3.center) to (6.center);
+		\draw[out=270, style=diredge, in=180] (4) to (7);
+		\draw[out=0, style=diredge, in=90, loop] (2) to ();
+		\draw[style=diredge] (2) to (5);
+		\draw[style=diredge] (2) to (1);
+	\end{pgfonlayer}
+\end{tikzpicture}

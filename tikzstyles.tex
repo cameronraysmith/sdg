@@ -1,0 +1,80 @@
+\usetikzlibrary{trees}
+\usetikzlibrary{topaths}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{decorations.markings}
+\usetikzlibrary{snakes,matrix,backgrounds,folding}
+\usetikzlibrary{chains,scopes,positioning,fit}
+\usetikzlibrary{arrows,shadows}
+\usetikzlibrary{calc} 
+\usetikzlibrary{chains}
+\usetikzlibrary{shapes,shapes.geometric,shapes.misc}
+
+
+\pgfsetlayers{background,edgelayer,nodelayer,main}
+
+% ===================================================
+% = Styles to add arrowheads in the middle of lines =
+% ===================================================
+
+\newcommand{\markat}{0.55}
+\newcommand{\markwithsym}{>}
+\newcommand{\markwith}{{\arrow[black]{\markwithsym}}}
+\pgfkeys{/tikz/.cd, markat/.store in=\markat, markwith/.store
+in=\markwithsym}
+\tikzset{decoration={markings, mark=at position \markat with \markwith}}
+
+\tikzstyle{square box}=[rectangle,fill=white,draw=black,minimum height=6mm,minimum width=6mm]
+\tikzstyle{diredge}=[postaction=decorate]
+\tikzstyle{tvertex}=[circle,inner sep=0.6pt,fill=black,draw=black]
+\tikzstyle{outputedge}=[diredge,-)]
+\tikzstyle{inputedge}=[diredge,(-]
+
+
+% ============================
+% = Styles for Lucas McGraph =
+% ============================
+
+\tikzstyle{mcgraph}=[baseline=(current bounding box.center), node distance=1.5em and 1.5em, every loop/.style={->, shorten >= 1pt, min distance=8mm}]
+\tikzstyle{mcgraph2}=[mcgraph,baseline=(current bounding box.center), node distance=6mm and 8mm]
+
+\tikzstyle{ivert}=[val, rectangle, fill=green!10!white, inner sep=3pt]
+\tikzstyle{bndry}=[line width=0.4pt, draw=black, inner sep=0.5pt, circle, dotted, font=\small]
+\tikzstyle{sitev}=[line width=0.4pt, draw=black, fill=white, inner sep=0.5pt, circle, dotted, font=\small]
+
+\tikzstyle{ellipses}=[font=\small]
+\tikzstyle{brace}=[font=\large]
+
+\tikzstyle{elabel}=[inner sep=1pt, font=\small]
+\tikzstyle{ipoint}=[fill=black, inner sep=1pt, circle,font=\small]
+\tikzstyle{ipointlabel}=[node distance=0em and 0em,font=\small]
+\tikzstyle{vpoint}=[rectangle,line width=0.4pt, draw=black, fill=green!10!white]
+
+\tikzstyle{onegate}=[node distance=1.5mm and 4mm]
+\tikzstyle{big}=[node distance=2mm and 6mm]
+
+\tikzstyle{copyg}=[draw=black, fill=white, line width=2pt, inner sep=2pt, circle]
+\tikzstyle{pregate}=[line width=1pt, inner sep=1mm, font=\small]
+\tikzstyle{gate}=[pregate, draw=green!50!black, fill=green!10!white]
+\tikzstyle{val}=[fill=white, inner sep=1mm, line width=0.2pt, draw=black, font=\small]
+\tikzstyle{andg}=[gate, rectangle]
+\tikzstyle{notg}=[gate, circle, inner sep=1pt]
+\tikzstyle{valg}=[val, circle, inner sep=1pt]
+\tikzstyle{subg}=[val, inner sep=3pt, rectangle]
+\tikzstyle{esubg}=[subg, line width=1pt, dotted]
+\tikzstyle{defg}=[val, line width=1pt, inner sep=3pt, draw=blue!50!black, double, rectangle]
+\tikzstyle{ignoreg}=[copyg]
+\tikzstyle{halfe}=[outer sep=1mm, inner sep=0mm, font=\small]
+\tikzstyle{evar}=[font=\small]
+\tikzstyle{line}=[-,rounded corners=1ex,line width=0.5pt,font=\small]
+\tikzstyle{dline}=[->,>=stealth,rounded corners=1ex,line width=0.5pt,font=\small]
+\tikzstyle{bbox}=[draw=red!50!black,line width=1pt,dotted,rectangle,inner sep=3pt]
+\tikzstyle{greenbox}=[rectangle,fill=green!30,draw=green!50!black]
+\tikzstyle{bluebox}=[rectangle,fill=blue!30,draw=blue]
+
+\tikzstyle{greybg}=[background rectangle/.style={fill=black!5,draw=black!30,rounded corners=1ex}, show background rectangle]
+\tikzstyle{precircuit}=[baseline=(current bounding box.center), node distance=2mm and 4mm]
+\tikzstyle{circuit}=[greybg, precircuit, edge/.style={dline}]
+
+
+
+
